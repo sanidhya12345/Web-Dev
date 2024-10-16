@@ -10,3 +10,12 @@ fs.readFile("./read.txt",(err,data)=>{
     }
     console.log(data.toString());
 })
+
+//append data into the file
+
+fs.appendFile("./demo.txt","Sanidhya Varshney",(err)=>{
+    if(err){
+        console.log(err);
+    }
+    console.log("data appended successfully");
+})
