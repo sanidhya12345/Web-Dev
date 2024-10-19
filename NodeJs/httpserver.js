@@ -1,25 +1,31 @@
 const http = require("http");
-
+const fs=require('fs');
 const port = process.env.PORT || 3000;
 
 const server = http.createServer((req, res) => {
   console.log(req.url);
-
+  res.setHeader('Content-type','text/html');
   if(req.url==="/"){
+    const data=fs.readFileSync("index.html");
+    res.statusCode=200;
     res.end(
-        "<h1>This is our main webpage</h1>"
+        data.toString()
       );
   }
-  else if(req.url==="/about"){
+  else if(req.url==="/link"){
+    const data=fs.readFileSync("link.html");
+    res.statusCode=200;
     res.end(
-        "<h1>This is our about page</h1>"
+        data.toString()
       );
   }
-  res.statusCode = 200; //OK
-  res.setHeader("Content-type", "text/html");
+else{
+  res.statusCode=404;
   res.end(
-    "<h1>This is our http server</h1> <p> Hey this is sanidhya varshney </p>"
+    "<h1>404 not found</h1>"
   );
+}
+  
 });
 //console.log(port);
 
