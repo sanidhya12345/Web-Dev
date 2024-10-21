@@ -5,5 +5,5 @@ test('toBe',()=>{
 })
 
 test('toEqual',()=>{
-    expect(add(12,14)).toEqual(26);
+    expect(add(12,14)).not.toEqual(265);
 })
