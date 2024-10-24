@@ -10,7 +10,7 @@ const blogs=[
         slug:"post-2"
     },
     {
-        title:"this is blog4",
+        title:"this is blog3",
         content:"blog 3 has content related to blog3",
         slug:"post-3"
     },
